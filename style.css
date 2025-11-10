@@ -77,7 +77,8 @@ h1 {
 
 .menu-button:hover,
 #close-story-dialog:hover,
-#close-controls-dialog:hover {
+#close-controls-dialog:hover,
+.impressum-btn:hover {
   background-color: #d88107;
 }
 
@@ -129,4 +130,45 @@ dialog::backdrop {
   border-radius: 10px;
   padding: 0.5rem;
   user-select: none;
+}
+
+.impressum-text,
+h2 {
+  font-family: "Texturina";
+  font-weight: 400;
+}
+
+.footer-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-item {
+  text-decoration: none;
+  color: rgb(233, 224, 200);
+  font-family: "Texturina";
+  font-weight: 400;
+}
+
+.impressum-btn {
+  font-family: "Texturina";
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: #ff9600;
+  border-radius: 10px;
+  padding: 0.4em 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-top: 32px;
+}
+
+.back-btn {
+  text-decoration: none;
 }
