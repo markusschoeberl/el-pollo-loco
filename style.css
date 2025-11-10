@@ -76,3 +76,35 @@ dialog::backdrop {
   font-weight: 400;
   margin-bottom: 32px;
 }
+
+.controls-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: "Texturina";
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #3a3a3a;
+  margin-bottom: 32px;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.arrow-box {
+  /* width: 2rem;
+  height: 2rem; */
+  background-color: #f5503a;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.5rem;
+  user-select: none;
+}
