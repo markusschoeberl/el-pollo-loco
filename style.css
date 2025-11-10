@@ -10,8 +10,69 @@ body {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  font-family: "Fruktur";
+  font-weight: 400;
 }
 
 canvas {
   background-color: black;
+}
+
+h1 {
+  letter-spacing: 0.1em;
+  font-size: 2.5em;
+  color: #ff9600;
+  text-shadow: 2px 2px 0 #555;
+}
+
+.button-container {
+  margin-top: 2em;
+  width: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.menu-button,
+#close-story-dialog,
+#close-controls-dialog {
+  font-family: "Fruktur";
+  font-weight: 400;
+  font-size: 1.4em;
+  background-color: #ff9600;
+  border-radius: 10px;
+  padding: 0.4em 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-button:hover,
+#close-story-dialog:hover,
+#close-controls-dialog {
+  background-color: #d88107;
+}
+
+dialog {
+  width: 70vw;
+  max-width: 500px;
+  padding: 2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  background-color: #e2c49a;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.story-text {
+  font-family: "Texturina";
+  font-weight: 400;
+  margin-bottom: 32px;
 }

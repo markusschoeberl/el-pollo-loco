@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
     <title>Document</title>
     <script src="models/drawable-object.class.js"></script>
     <script src="/models/movable-object.class.js"></script>
@@ -21,8 +22,61 @@
     <script src="/js/game.js"></script>
   </head>
   <body onload="init()">
-    <h1>El pollo loco</h1>
+    <h1>El Pollo Loco</h1>
 
     <canvas id="canvas" width="864" height="576"> </canvas>
+
+    <div class="button-container">
+      <button class="menu-button" id="story-btn">Story</button>
+      <button class="menu-button" id="controls-btn">Controls</button>
+      <button class="menu-button">TEST-BUTTON</button>
+    </div>
+
+    <dialog id="story-dialog">
+      <h2>The Story</h2>
+      <div class="story-text">
+        <p>
+          In a faraway corner of Mexico, where the sand glows and the sun never
+          takes a break, there once lived a man with fire in his heart... and in
+          his hand.
+        </p>
+        <p>His name: <strong>Pepe Peligroso</strong>.</p>
+        <p>
+          He was known for his legendary Tabasco mixture—so hot that even the
+          shadows sweated. But one day, the unthinkable happened: a single drop
+          of his super sauce fell into the feed at Don Gallo's chicken farm.
+        </p>
+        <p>Since then, nothing has been the same.</p>
+        <p>
+          The chickens have gone crazy! They storm through the streets, pecking,
+          flapping, firing with rage. No one knows why they're racing around
+          like this—except Pepe. Because it was him... well, sort of.
+        </p>
+        <p>
+          Now it's up to him to make amends. With courage, style, and a good
+          dose of Tabasco, Pepe sets out to stop the chickens—before all of
+          Mexico is breaded.
+        </p>
+        <p>
+          But at the end, someone very special awaits:
+          <b>El Pollo Supremo</b>—the giant chicken full of hatred, feathers,
+          and spice.
+        </p>
+        <p>
+          If Pepe wants to defeat him, he'll need more than accuracy. He'll need
+          flavor. And lots of Tabasco.
+        </p>
+      </div>
+
+      <button id="close-story-dialog">Go, grill them all!</button>
+    </dialog>
+
+    <dialog id="controls-dialog">
+      <h2>The Controls</h2>
+      <div class="controls-content"></div>
+      <button id="close-controls-dialog">Ready, Set, Spice!</button>
+    </dialog>
+
+    <script src="js/operations.js"></script>
   </body>
 </html>
