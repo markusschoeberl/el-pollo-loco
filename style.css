@@ -167,8 +167,26 @@ h2 {
   border: none;
   cursor: pointer;
   margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .back-btn {
   text-decoration: none;
+}
+
+.datenschutz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+  font-family: "Texturina";
+  font-weight: 400;
+  font-size: 1rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.datenschutz-container::-webkit-scrollbar {
+  display: none;
 }
