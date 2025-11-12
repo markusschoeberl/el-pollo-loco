@@ -72,6 +72,7 @@ class Character extends MovableObject {
 
   world;
   //walking_sound = new Audio('audio/running.mp3');
+  snoring_sound = new Audio("audio/pepe/snore.mp3");
 
   constructor() {
     super();
@@ -120,6 +121,7 @@ class Character extends MovableObject {
         this.playAnimation(this.IMAGES_JUMPING);
       } else if (this.idleTime >= this.idleLimit) {
         this.playAnimation(this.IMAGES_SLEEP);
+        this.snoring_sound.play();
       } else {
         if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
           this.playAnimation(this.IMAGES_WALKING);
