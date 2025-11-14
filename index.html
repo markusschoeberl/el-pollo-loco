@@ -76,8 +76,15 @@
     <div class="button-container">
       <button class="menu-button" id="story-btn">Story</button>
       <button class="menu-button" id="controls-btn">Controls</button>
-      <button class="menu-button" id="sound-control">
+      <button
+        class="menu-button"
+        id="sound-control"
+        onclick="setMute();"
+        aria-pressed="false"
+        aria-label="Mute/Unmute"
+      >
         <svg
+          id="muteIcon"
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
           viewBox="0 -960 960 960"
