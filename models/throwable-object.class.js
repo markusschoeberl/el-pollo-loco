@@ -21,12 +21,13 @@ class ThrowableObject extends MovableObject {
   throw_sound = registerSound(new Audio("audio/pepe/throw.wav"));
   splash_sound = registerSound(new Audio("audio/items/bottle-thrown.mp3"));
 
-  constructor(x, y) {
+  constructor(x, y, enemies) {
     super().loadImage("assets/img/6_salsa_bottle/salsa_bottle.png");
     this.loadImages(this.BOTTLE_ROTATION);
     this.loadImages(this.BOTTLE_SPLASH);
     this.x = x;
     this.y = y;
+    this.enemies = enemies;
     this.height = 60;
     this.width = 50;
     this.throw();
@@ -46,7 +47,19 @@ class ThrowableObject extends MovableObject {
       if (!this.isSplashed && this.y + this.height >= this.groundY) {
         this.onSplash();
       }
+      if (this.enemies) {
+        this.checkCollision(this.enemies);
+      }
     }, 20);
+  }
+
+  checkCollision(enemies) {
+    enemies.forEach((enemy) => {
+      if (!this.isSplashed && !enemy.isDead && this.isColliding(enemy)) {
+        enemy.die();
+        this.onSplash();
+      }
+    });
   }
 
   onSplash() {
