@@ -15,6 +15,12 @@ class ThrowableObject extends MovableObject {
     "assets/img/6_salsa_bottle/bottle_rotation/bottle_splash/6_bottle_splash.png",
   ];
 
+  isSplashed = false;
+  groundY = 500;
+
+  throw_sound = registerSound(new Audio("audio/pepe/throw.wav"));
+  splash_sound = registerSound(new Audio("audio/items/bottle-thrown.mp3"));
+
   constructor(x, y) {
     super().loadImage("assets/img/6_salsa_bottle/salsa_bottle.png");
     this.loadImages(this.BOTTLE_ROTATION);
@@ -24,20 +30,30 @@ class ThrowableObject extends MovableObject {
     this.height = 60;
     this.width = 50;
     this.throw();
-    this.splashOnGround();
   }
 
   throw() {
+    this.throw_sound.play();
     this.speedY = 30;
     this.applyGravity();
-    setInterval(() => {
-      this.x += 10;
+    this.rotationInterval = setInterval(() => {
+      if (!this.isSplashed) {
+        this.playAnimation(this.BOTTLE_ROTATION);
+        this.x += 10;
+      }
     }, 25);
+    this.splashInterval = setInterval(() => {
+      if (!this.isSplashed && this.y + this.height >= this.groundY) {
+        this.onSplash();
+      }
+    }, 20);
   }
 
-  splashOnGround() {
-    if (!this.isAboveGround()) {
-      this.playAnimation(this.BOTTLE_SPLASH);
-    }
+  onSplash() {
+    this.isSplashed = true;
+    clearInterval(this.rotationInterval);
+    this.playAnimation(this.BOTTLE_SPLASH);
+    this.splash_sound.play();
+    clearInterval(this.splashInterval);
   }
 }
