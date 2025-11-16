@@ -73,6 +73,9 @@ class Character extends MovableObject {
   world;
   walking_sound = registerSound(new Audio("audio/pepe/walking.wav"));
   snoring_sound = registerSound(new Audio("audio/pepe/snore.mp3"));
+  jumping_sound = registerSound(new Audio("audio/pepe/jump.wav"));
+  hurt_sound = registerSound(new Audio("audio/pepe/hurt.wav"));
+  die_sound = registerSound(new Audio("audio/pepe/die.wav"));
 
   constructor() {
     super();
@@ -101,6 +104,7 @@ class Character extends MovableObject {
       }
       if (this.world.keyboard.SPACE && !this.isAboveGround()) {
         this.jump();
+        this.jumping_sound.play();
       }
       this.world.camera_x = -this.x + 100;
     }, 1000 / 60);
@@ -115,8 +119,10 @@ class Character extends MovableObject {
 
       if (this.isDead()) {
         this.playAnimation(this.IMAGES_DEAD);
+        this.die_sound.play();
       } else if (this.isHurt()) {
         this.playAnimation(this.IMAGES_HURT);
+        this.hurt_sound.play();
       } else if (this.isAboveGround()) {
         this.playAnimation(this.IMAGES_JUMPING);
       } else if (this.idleTime >= this.idleLimit) {

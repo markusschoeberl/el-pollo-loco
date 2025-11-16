@@ -17,6 +17,15 @@ function registerSound(audio) {
   return audio;
 }
 
+function getMuteState() {
+  return localStorage.getItem("soundMuted") === "true";
+}
+
+function toggleMute() {
+  let currentlyMuted = getMuteState();
+  setMute(!currentlyMuted);
+}
+
 function setMute(muted) {
   allSounds.forEach((sound) => {
     sound.muted = muted;
@@ -30,6 +39,12 @@ function setMute(muted) {
     localStorage.setItem("soundMuted", "false");
   }
 }
+
+muteButton.addEventListener("click", toggleMute);
+
+document.addEventListener("DOMContentLoaded", function () {
+  setMute(getMuteState());
+});
 
 openBtnStory.addEventListener("click", () => {
   storyDialog.showModal();

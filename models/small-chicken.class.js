@@ -1,0 +1,1 @@
+class SmallChicken extends MovableObject {}
