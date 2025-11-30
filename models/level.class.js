@@ -1,6 +1,7 @@
 class Level {
   enemies;
   clouds;
+  coins;
   backgroundObjects;
   levelLength = 6;
   layerWidth = 863;

@@ -4,5 +4,3 @@ const level1 = new Level(
   6,
   863
 );
-
-let throwableBottle = new ThrowableObject(x, y, level1.enemies);
