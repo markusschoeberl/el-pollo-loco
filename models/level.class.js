@@ -2,14 +2,17 @@ class Level {
   enemies;
   clouds;
   coins;
+  bottles;
   backgroundObjects;
   levelLength = 6;
   layerWidth = 863;
   level_end_x = this.levelLength * this.layerWidth - 780;
 
-  constructor(enemies, clouds, levelLength, layerWidth) {
+  constructor(enemies, clouds, coins, bottles, levelLength, layerWidth) {
     this.enemies = enemies;
     this.clouds = clouds;
+    this.coins = coins;
+    this.bottles = bottles;
     this.levelLength = levelLength;
     this.layerWidth = layerWidth;
     this.backgroundObjects = this.generateBackground();
